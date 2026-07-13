@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Exercise 1: Define the Repository bean -->
+    <bean id="bookRepository" class="org.example.repository.BookRepository" />
+
+    <!-- Exercise 2: Define the Service bean and wire BookRepository into it using setter injection -->
+    <bean id="bookService" class="org.example.service.BookService">
+        <!-- The 'name' attribute must match the setter method name in BookService -->
+        <property name="bookRepository" ref="bookRepository"/>
+    </bean>
+
+</beans>
